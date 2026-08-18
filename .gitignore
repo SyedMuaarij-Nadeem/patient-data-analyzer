@@ -1,0 +1,17 @@
+# Python compilation caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE files
+.idea/
+.vscode/
+
+# Local configuration / inputs / outputs (optional but standard)
+output/
