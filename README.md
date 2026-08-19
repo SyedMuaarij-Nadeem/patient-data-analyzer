@@ -1,4 +1,4 @@
-# 🏥 Hospital Patient Data Analyzer (v2.0)
+# 🏥 Hospital Patient Data Analyzer
 
 A powerful, interactive Python-based data analysis and assessment pipeline designed to process large-scale clinical patient datasets and evaluate individual vital signs against medical reference guidelines.
 
