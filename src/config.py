@@ -9,10 +9,13 @@ if not csv_files:
     raise FileNotFoundError("No CSV file found in the downloaded dataset.")
 DATA_FILE = os.path.join(dataset_path, csv_files[0])
 print(f"Dataset downloaded to: {DATA_FILE}")
-OUTPUT_REPORT = "output/analysis_report.txt"
-OUTPUT_ANOMALIES = "output/anomalies.csv"
 
-# Columns we want to analyze in Version 1
+# Output paths
+OUTPUT_REPORT     = "output/analysis_report.txt"       # legacy .txt fallback
+OUTPUT_REPORT_HTML = "output/analysis_report.html"     # v2 HTML report (dataset mode)
+OUTPUT_ANOMALIES  = "output/anomalies.csv"
+
+# Columns we want to analyze
 NUMERICAL_FEATURES = [
     "Age",
     "HR",
@@ -34,6 +37,12 @@ IDENTIFIER_COLUMNS = [
     "Hour"
 ]
 
-# Z-score threshold
-# |z| > 2 means statistically unusual
+# Sepsis label column (present in dataset)
+SEPSIS_LABEL_COLUMN = "SepsisLabel"
+
+# Z-score threshold — |z| > 2 means statistically unusual
 Z_SCORE_THRESHOLD = 2
+
+# Number of rows randomly sampled for chart visualisation.
+# Statistics (mean, std, etc.) still use the full dataset.
+CHART_SAMPLE_SIZE = 30_000
